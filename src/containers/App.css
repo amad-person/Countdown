@@ -1,0 +1,16 @@
+.App {
+    font-size: large;
+    padding: 2em;
+}
+
+#title {
+    font-size: 3em;
+}
+
+#subtitle {
+    color: #737373;
+}
+
+.CountdownCardList {
+    padding: 0.5em;
+}

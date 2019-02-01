@@ -1,0 +1,13 @@
+#eventName {
+    text-align: center;
+    margin: 0;
+}
+
+#numDays {
+    text-align: center;
+    font-size: 7em;
+}
+
+#unitTime {
+    text-align: center;
+}
