@@ -1,16 +1,16 @@
 .App {
-    font-size: large;
-    padding: 2em;
+  font-size: large;
+  padding: 2em;
 }
 
 #title {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #subtitle {
-    color: #737373;
+  color: #737373;
 }
 
 .CountdownCardList {
-    padding: 0.5em;
+  padding: 0.5em;
 }
