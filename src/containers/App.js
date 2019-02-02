@@ -5,15 +5,61 @@ import CountdownCardList from "../components/CountdownCardList/CountdownCardList
 import "./App.css";
 
 class App extends Component {
-  state = {
-    countdownCards: [
-      {
-        eventName: "Special Occasion",
-        eventDate: "2019-02-12",
-        randomBgColor: "hsl(50, 100%, 75%)"
+  constructor(props) {
+    super(props);
+    this.state = {
+      countdownCards: [
+        {
+          eventName: "Special Occasion",
+          eventDate: "2019-02-12",
+          randomBgColor: "hsl(50, 100%, 75%)"
+        }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
+
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+
+    this.saveStateToLocalStorage();
+  }
+
+  hydrateStateWithLocalStorage() {
+    for (let key in this.state) {
+      if (localStorage.hasOwnProperty(key)) {
+        let value = localStorage.getItem(key);
+
+        try {
+          value = JSON.parse(value);
+          this.setState({
+            [key]: value
+          });
+        } catch (err) {
+          this.setState({
+            [key]: value
+          });
+        }
       }
-    ]
-  };
+    }
+  }
+
+  saveStateToLocalStorage() {
+    for (let key in this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
 
   handleSubmit = countdownCard => {
     this.setState({
