@@ -15,9 +15,17 @@ class App extends Component {
         ]
     };
 
-    handleSubmit = countdownCard => {
+    handleSubmit = (countdownCard) => {
         this.setState({
             countdownCards: [...this.state.countdownCards, countdownCard]
+        });
+    };
+
+    handleDelete = (index) => {
+        const newCountdownCards = this.state.countdownCards;
+        newCountdownCards.splice(index, 1);
+        this.setState({
+            countdownCards: newCountdownCards
         });
     };
 
@@ -28,7 +36,10 @@ class App extends Component {
                 <p id="subtitle">Add an event to track how many days are left!</p>
                 <CountdownForm handleSubmit={this.handleSubmit}/>
                 <Card.Group stackable className="CountdownCardList" itemsPerRow={3}>
-                    <CountdownCardList countdownCards={this.state.countdownCards}/>
+                    <CountdownCardList
+                        countdownCards={this.state.countdownCards}
+                        deleteHandler={this.handleDelete}
+                    />
                 </Card.Group>
             </div>
         );

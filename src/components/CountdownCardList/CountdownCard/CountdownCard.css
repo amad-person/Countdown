@@ -1,3 +1,13 @@
+#deleteButton {
+    background: transparent;
+    float: right;
+    position:absolute;
+    right: 0.5em;
+    top: 0.25em;
+    width: 10%;
+    max-width: 10%;
+}
+
 #eventName {
     text-align: center;
     margin: 0;

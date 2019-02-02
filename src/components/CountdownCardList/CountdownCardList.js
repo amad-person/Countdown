@@ -6,6 +6,7 @@ class CountdownCardList extends Component {
         return this.props.countdownCards.map((countdownCard, index) => {
             return (
                 <CountdownCard
+                    deleteHandler={() => this.props.deleteHandler(index)}
                     eventName={countdownCard.eventName}
                     eventDate={countdownCard.eventDate}
                     randomBgColor={countdownCard.randomBgColor}
