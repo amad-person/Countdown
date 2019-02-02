@@ -66,7 +66,7 @@ class CountdownForm extends Component {
                         />
                     </Form.Field>
                 </Form.Group>
-                <Form.Button primary type="submit">
+                <Form.Button id="submitButton" primary type="submit">
                     Add Event!
                 </Form.Button>
             </Form>
