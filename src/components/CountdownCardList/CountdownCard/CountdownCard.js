@@ -21,6 +21,7 @@ const countdownCard = props => {
                 content="Delete this event"
                 position="bottom right"
                 verticalOffset={-10}
+                size="mini"
             />
             <h3 id="eventName">{props.eventName}</h3>
             <h2 id="numDays">{futureDate.diff(currentDate, 'days')}</h2>
