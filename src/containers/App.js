@@ -10,7 +10,7 @@ class App extends Component {
             {
                 eventName: "Special Occasion",
                 eventDate: "2019-02-12",
-                randomBgColor: ""
+                randomBgColor: "hsl(50, 100%, 75%)"
             }
         ]
     };
