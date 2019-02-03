@@ -32,8 +32,13 @@ class CountdownForm extends Component {
         randomBgColor: randomBgColor
       },
       () => {
-        console.log(this.state);
-        this.props.handleSubmit(this.state);
+        const countdownCard = {
+          eventName: this.state.eventName,
+          eventDate: this.state.eventDate,
+          randomBgColor: this.state.randomBgColor
+        };
+
+        this.props.handleSubmit(countdownCard);
         this.setState(this.defaultState);
       }
     );

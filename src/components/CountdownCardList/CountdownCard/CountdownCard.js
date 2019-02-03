@@ -4,8 +4,6 @@ import moment from "moment";
 import "./CountdownCard.css";
 
 const countdownCard = props => {
-  console.log(props.randomBgColor);
-
   let style = {
     backgroundColor: props.randomBgColor,
     padding: "1.5em"
