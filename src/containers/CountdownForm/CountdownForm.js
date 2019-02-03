@@ -111,6 +111,7 @@ class CountdownForm extends Component {
         <Form.Group>
           <Form.Field
             error={this.hasError(this.state.formErrors.eventName)}
+            required
             width={8}
           >
             <label>Event</label>
@@ -131,6 +132,7 @@ class CountdownForm extends Component {
           </Form.Field>
           <Form.Field
             error={this.hasError(this.state.formErrors.eventDate)}
+            required
             width={8}
           >
             <label>Date</label>
